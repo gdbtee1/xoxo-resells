@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #432d36;
+  background: #fffaf8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --cream: #fffaf8;
+  --milk: #fff3f6;
+  --blush: #f9d7e2;
+  --pink: #f4a7bf;
+  --rose: #e9789d;
+  --cherry: #c94c70;
+  --berry: #714052;
+  --brown: #432d36;
+  --soft-text: #896c77;
+  --line: #efdce2;
+  --yellow: #f8eaa8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 5%,
+      rgba(247, 205, 220, 0.3),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 92% 16%,
+      rgba(255, 225, 233, 0.5),
+      transparent 30rem
+    ),
+    #fffaf8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: #f6bfd1;
+  color: #432d36;
+}
+
+.site-container {
+  width: min(1280px, calc(100% - 42px));
+  margin-inline: auto;
+}
+
+.editorial-font {
+  font-family: "Playfair Display", serif;
+}
+
+.ui-font {
+  font-family: "Manrope", sans-serif;
+}
+
+.micro-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.luxury-shadow {
+  box-shadow:
+    0 35px 90px rgba(99, 47, 66, 0.08),
+    0 10px 30px rgba(131, 68, 91, 0.06);
+}
+
+.soft-card {
+  background: rgba(255, 253, 252, 0.82);
+  border: 1px solid rgba(225, 193, 204, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.xoxo-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(233, 120, 157, 0.45);
+}
+
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--rotation, 0deg));
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(var(--rotation, 0deg));
+  }
+}
+
+.gentle-float {
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+  .site-container {
+    width: calc(100% - 24px);
+  }
+}
