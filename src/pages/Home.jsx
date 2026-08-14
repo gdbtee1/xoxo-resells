@@ -25,6 +25,7 @@ import XoxoPageFrame from "../components/experience/XoxoPageFrame";
 import products from "../data/products";
 
 function Home() {
+  const BASE = import.meta.env.BASE_URL;
   const heroRef = useRef(null);
   const roomsRef = useRef(null);
 
@@ -153,7 +154,7 @@ function Home() {
             >
               <div className="relative h-full overflow-hidden rounded-[5rem_5rem_0_0]">
                 <img
-                  src="/images/curator/curator-hero.jpg"
+                  src={`${BASE}images/curator/curator-hero.jpg`}
                   alt="XOXO Resells curator"
                   className="h-full w-full object-cover object-top"
                 />
@@ -270,7 +271,7 @@ function Home() {
               className="absolute inset-0"
             >
               <img
-                src="/images/curator/curator-hero.jpg"
+                src={`${BASE}images/curator/curator-hero.jpg`}
                 alt="XOXO Resells curator"
                 className="h-full w-full object-cover object-[center_24%]"
               />
@@ -686,10 +687,10 @@ function Home() {
                 className="group relative min-h-[440px] overflow-hidden rounded-[2.7rem] bg-[#805065] lg:col-span-7"
               >
                 <img
-                  src="/images/curator/curator-live.jpg"
+                  src={`${BASE}images/curator/curator-live.jpg`}
                   onError={(event) => {
                     event.currentTarget.src =
-                      "/images/curator/curator-hero.jpg";
+                      `${BASE}images/curator/curator-hero.jpg`;
                   }}
                   alt="XOXO Live"
                   className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]"
