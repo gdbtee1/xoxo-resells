@@ -1,4 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
+
+import { CartProvider } from "./context/CartContext";
 
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
@@ -12,31 +18,64 @@ import Cart from "./pages/Cart";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
+    <CartProvider>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home />}
+        />
 
-      <Route path="/shop" element={<Shop />} />
+        <Route
+          path="/shop"
+          element={<Shop />}
+        />
 
-      <Route path="/closet" element={<Closet />} />
+        <Route
+          path="/closet"
+          element={<Closet />}
+        />
 
-      <Route path="/tech" element={<Tech />} />
+        <Route
+          path="/tech"
+          element={<Tech />}
+        />
 
-      <Route
-        path="/collectors"
-        element={<Collectors />}
-      />
+        <Route
+          path="/collectors"
+          element={<Collectors />}
+        />
 
-      <Route path="/live" element={<Live />} />
+        <Route
+          path="/live"
+          element={<Live />}
+        />
 
-      <Route
-        path="/product/:slug"
-        element={<Product />}
-      />
+        <Route
+          path="/product/:slug"
+          element={<Product />}
+        />
 
-      <Route path="/about" element={<About />} />
+        <Route
+          path="/about"
+          element={<About />}
+        />
 
-      <Route path="/cart" element={<Cart />} />
-    </Routes>
+        <Route
+          path="/cart"
+          element={<Cart />}
+        />
+
+        <Route
+          path="*"
+          element={
+            <Navigate
+              to="/"
+              replace
+            />
+          }
+        />
+      </Routes>
+    </CartProvider>
   );
 }
 
